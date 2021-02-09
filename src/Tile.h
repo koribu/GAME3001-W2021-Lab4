@@ -2,6 +2,7 @@
 #ifndef __TILE__
 #define __TILE__
 #include "DisplayObject.h"
+#include "Label.h"
 #include"NeighbourTile.h"
 
 class Tile : public DisplayObject
@@ -24,9 +25,16 @@ public:
 	float getTileCost() const;
 	void setTileCost(float cost);
 
-private:
+	void addLabels();
+	void setLabelsEnabled(bool state) const;
 
+private:
+	
 	float m_cost;
+
+	Label* m_costLabel;
+	Label* m_statusLabel;
+	
 	Tile* m_neighbours[NUM_OF_NEIGHBOUR_TILES];
 };
 

@@ -127,6 +127,7 @@ void PlayScene::m_buildGrid()
 			Tile* tile = new Tile(); // create empty tile
 			tile->getTransform()->position = glm::vec2(col * tileSize, row * tileSize);
 			addChild(tile);
+			tile->addLabels();
 			tile->setEnabled(false);
 			m_pGrid.push_back(tile);
 		}
@@ -189,6 +190,7 @@ void PlayScene::m_setGridEnabled(bool state)
 	for (auto tile : m_pGrid)
 	{
 		tile->setEnabled(state);
+		tile->setLabelsEnabled(state);
 	}
 
 	if(state == false)

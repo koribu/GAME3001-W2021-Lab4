@@ -28,14 +28,20 @@ public:
 	void addLabels();
 	void setLabelsEnabled(bool state) const;
 
+
+	glm::vec2 getGridPosition() const;
+	void setGridPosition(float col, float row);
+
 private:
 	
 	float m_cost;
 
 	Label* m_costLabel;
 	Label* m_statusLabel;
-	
+
+	glm::vec2 m_gridPosition;
 	Tile* m_neighbours[NUM_OF_NEIGHBOUR_TILES];
 };
+
 
 #endif /* defined (__TILE__) */
